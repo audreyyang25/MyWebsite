@@ -1,37 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Audrey's Honors Topics Website</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">  
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-        <h1><center>Welcome to Audrey's Honors Topics Website!</center></h1>
-        <h3><center>Some Random Inspirational Quotes according to Google:</center></h3>
-        <center>"Be tolerant with others and strict with yourself."</center>
-        <center>Marcus Aurelius</center>
-        <p></p><center>"It is often the small steps, not the giant leaps, that bring about the most lasting change."</center>
-        <center>Queen Elizabeth II</center></p>
-      </div>
-    </header>
-    <main>
-      <div class="main-container">
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </main>
-    <footer>
-      <div class="footer-container">
-        <p>&copy; 2023 Audrey's Honors Topics Website. All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Load CSS on Button Click</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .box {
+      width: 30%;
+      height: 200px;
+      background-color: #ccc;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      padding: 20px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: justify;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1><center>Welcome to Audrey's Honors Topics Website!</center></h1>
+      <h3><center>Some Random Inspirational Quotes according to Google:</center></h3>
+      <center>"Be tolerant with others and strict with yourself."</center>
+      <center>Marcus Aurelius</center>
+      <p></p><center>"It is often the small steps, not the giant leaps, that bring about the most lasting change."</center>
+      <center>Queen Elizabeth II</center></p>
+    </div>
+  </header>
+  <img src="https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_1400/MTk2NzY3MjA5ODc0MjY5ODI2/top-10-cutest-cat-photos-of-all-time.webp" alt="Random photo">
+
+  <main>
+    <div class="main-container">
+      <p>This is my first Honors Topics Website. I do not know what to write in this paragraph so here is a placeholder. I found a picture of a cute cat and some "inspirational" life quotes that Google provided. Credit to ChatGPT for writing the code for all of this :)</p>
+    </div>
+  </main>
+  <button id="button1">Load CSS 1</button>
+  <button id="button2">Load CSS 2</button>
+
+  <div class="container">
+    <div class="box">Home</div>
+    <div class="box">About</div>
+    <div class="box">Contact</div>
+  </div>
+  <p>Disclaimer: These boxes should be links but I didn't feel like inserting links, so they're just there for fun. Maybe one day they will become links.</p>
+
+  <script>
+    var button1 = document.getElementById("button1");
+    var button2 = document.getElementById("button2");
+
+    button1.onclick = function() {
+      loadCSS("css1.css");
+    };
+
+    button2.onclick = function() {
+      loadCSS("css2.css");
+    };
+
+    function loadCSS(filename) {
+      var link = document.createElement("link");
+      link.href = filename;
+      link.type = "text/css";
+      link.rel = "stylesheet";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    }
+  </script>
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2023 Audrey's Honors Topics Website. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
 </html>
+
+
